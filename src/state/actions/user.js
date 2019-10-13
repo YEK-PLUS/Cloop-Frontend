@@ -1,10 +1,13 @@
 import { USER } from '../types';
 
 const { LOGINED } = USER;
-export const UserLogined = (payload = true) => {
+const UserLogined = (payload = true) => {
 	const a = {
 		type: LOGINED,
 		value: payload,
 	};
 	return (a);
 };
+export default {
+	UserLogined
+}

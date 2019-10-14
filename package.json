@@ -6,7 +6,11 @@
     "start": "razzle start",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
-    "start:prod": "NODE_ENV=production node build/server.js"
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "full-start": "npm run create-tailwind-css && razzle start",
+    "create-tailwind-output": "node src/components/css/index",
+    "create-tailwind-css": "npm run create-tailwind-output && npx tailwind build src/components/css/tailwind.output.css -o public/index.css ",
+    "eslint" : "eslint src --fix && eslint src --fix-dry-run"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.2",

@@ -23,6 +23,8 @@
     "i18next-express-middleware": "^1.8.2",
     "i18next-node-fs-backend": "^2.1.3",
     "i18next-xhr-backend": "^3.2.0",
+    "postcss": "^7.0.18",
+    "postcss-import": "^12.0.1",
     "razzle": "3.0.0",
     "react": "16.9.0",
     "react-dom": "^16.10.2",
@@ -31,7 +33,8 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "serialize-javascript": "^2.1.0"
+    "serialize-javascript": "^2.1.0",
+    "tailwindcss": "^1.1.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.5.2",

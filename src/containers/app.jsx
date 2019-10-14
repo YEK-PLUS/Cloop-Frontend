@@ -35,7 +35,7 @@ class App extends React.Component {
 			<ApolloProvider client={ApolloClient}>
 				<div className="w-full h-auto py-2 flex flex-col justify-center items-center bg-gray-500 text-white text-center text-4xl">
 					{t('main.title')}
-					<div onClick={this.login} className={`w-auto h-auto p-2 bg-red-500`}>
+					<div onClick={this.login} className={`btn-blue`}>
 						{logined === true ? 'cikis yap' : 'giris yap'}
 					</div>
 					{this.checkLogined()}

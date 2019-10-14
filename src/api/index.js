@@ -1,1 +1,1 @@
-export ApolloClient from './apollo'
+export ApolloClient from './apollo';

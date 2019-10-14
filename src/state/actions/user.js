@@ -9,5 +9,5 @@ const UserLogined = (payload = true) => {
 	return (a);
 };
 export default {
-	UserLogined
-}
+	UserLogined,
+};

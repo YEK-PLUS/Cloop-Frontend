@@ -10,11 +10,12 @@
     "full-start": "npm run create-tailwind-css && razzle start",
     "create-tailwind-output": "node src/components/css/index",
     "create-tailwind-css": "npm run create-tailwind-output && npx tailwind build src/components/css/tailwind.output.css -o public/index.css ",
-    "eslint" : "eslint src --fix && eslint src --fix-dry-run"
+    "eslint": "eslint src --fix && eslint src --fix-dry-run"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.2",
     "apollo-boost": "^0.4.4",
+    "axios": "^0.19.0",
     "cross-fetch": "^3.0.4",
     "express": "4.17.1",
     "graphql": "^14.5.8",

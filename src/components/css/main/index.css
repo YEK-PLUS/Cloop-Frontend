@@ -1,0 +1,6 @@
+.flex-full{
+  @apply flex justify-center items-center;
+}
+.animation{
+  transition: .5s all ease;
+}

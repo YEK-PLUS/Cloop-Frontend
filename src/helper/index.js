@@ -1,1 +1,1 @@
-export {getLocalStorage,setLocalStorage,delLocalStorage} from './localStorage';
+export { getLocalStorage, setLocalStorage, delLocalStorage } from './localStorage';

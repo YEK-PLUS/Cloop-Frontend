@@ -1,14 +1,20 @@
 import React from 'react';
+import { withRouter } from "react-router";
+import { Route,Switch,Redirect } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ApolloProvider } from '@apollo/react-hooks';
 
 import { gql } from "apollo-boost";
-
+import _ from 'lodash'
 import {userActions} from '../state/actions';
 import {ApolloClient} from '../api'
 
+import Home from './home';
+import Login from './login';
+
+import {RestAPI} from '../api';
 const mapStateToProps = (state) => ({
   logined: state.user.logined,
 });
@@ -18,12 +24,32 @@ function mapDispatchToProps(dispatch) {
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.login = this.login.bind(this);
 	}
-	login(){
-		const {UserLogined,logined} = this.props;
-		let login = logined === true ? true:false
-		UserLogined( !login );
+  state = {
+    logined:false
+  }
+  componentDidMount(){
+    const {UserLogined,logined} = this.props;
+    RestAPI('/auth/token').then( (data)=> {
+      const logined = !_.has(data,'error')
+      this.setState({logined})
+    } );
+  }
+	login() {
+    let response;
+    if(!this.state.logined && this.props.location.pathname !== '/login') {
+      response = <Redirect to="/login" />;
+    }
+    else if (!this.state.logined && this.props.location.pathname === '/login') {
+      response = null;
+    }
+    else if (this.state.logined && this.props.location.pathname === '/login') {
+      response = <Redirect to="/" />;
+    }
+    else {
+      response = null
+    }
+    return (response);
 	}
 	checkLogined(){
 		const {logined} = this.props;
@@ -33,16 +59,18 @@ class App extends React.Component {
 		const {t,logined} = this.props;
 		return (
 			<ApolloProvider client={ApolloClient}>
-				<div className="w-full h-auto py-2 flex flex-col justify-center items-center bg-gray-500 text-white text-center text-4xl">
-					{t('main.title')}
-					<div onClick={this.login} className={`btn-blue`}>
-						{logined === true ? 'cikis yap' : 'giris yap'}
-					</div>
-					{this.checkLogined()}
-				</div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+        {this.login()}
 			</ApolloProvider>
 		);
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withTranslation('translations')(App));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(
+    withTranslation('main')(App)
+  )
+);

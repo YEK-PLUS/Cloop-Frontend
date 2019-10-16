@@ -6,8 +6,8 @@ import i18n from './i18n';
 const setupOptions = (src) => ({
 	debug: false,
 	preload: ['en', 'tr'],
-	ns: ['translations'],
-	defaultNS: 'translations',
+	ns: ['main','login'],
+	defaultNS: 'main',
 	backend: {
 		loadPath: `${src}/locales/{{lng}}/{{ns}}.json`,
 		addPath: `${src}/locales/{{lng}}/{{ns}}.missing.json`,

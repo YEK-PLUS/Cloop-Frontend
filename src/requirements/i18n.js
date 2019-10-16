@@ -6,8 +6,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const options = {
 	fallbackLng: 'en',
 	load: 'languageOnly',
-	ns: ['translations'],
-	defaultNS: 'translations',
+	ns: ['main','login'],
+	defaultNS: 'main',
 
 	saveMissing: true,
 	debug: true,

@@ -1,4 +1,8 @@
 {
-    "usernamePlaceholder":"username",
-    "passwordPlaceholder":"password"
+    "usernamePlaceholder":"Username",
+    "passwordPlaceholder":"Password",
+    "loginButton":"Login",
+    "invalidPassword":"Invalid Password",
+    "userNotFound":"User Not Found",
+    "fillInTheRequiredFields":"Fill In The Required Fields"
 }

@@ -1,4 +1,8 @@
 {
-    "usernamePlaceholder":"username",
-    "passwordPlaceholder":"password"
+    "usernamePlaceholder":"Kullanici Adi",
+    "passwordPlaceholder":"Sifre",
+    "loginButton":"Giris Yap"
+    "invalidPassword":"Hatali Sifre",
+    "userNotFound":"Kullanici Bulunamadi",
+    "fillInTheRequiredFields":"Lutfen Gerekli Yerleri Doldurun"
 }

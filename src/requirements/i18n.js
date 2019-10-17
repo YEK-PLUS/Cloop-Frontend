@@ -10,7 +10,7 @@ const options = {
 	defaultNS: 'main',
 
 	saveMissing: true,
-	debug: true,
+	debug: false,
 
 	interpolation: {
 		escapeValue: false,

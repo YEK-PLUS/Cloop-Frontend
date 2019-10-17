@@ -6,7 +6,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const options = {
 	fallbackLng: 'en',
 	load: 'languageOnly',
-	ns: ['main','login'],
+	ns: ['main', 'login'],
 	defaultNS: 'main',
 
 	saveMissing: true,

@@ -29,31 +29,27 @@ class App extends React.Component {
     logined:false
   }
   componentDidMount(){
-    const {UserLogined,logined} = this.props;
+    const {UserLogined} = this.props;
     RestAPI('/auth/token').then( (data)=> {
       const logined = !_.has(data,'error')
-      this.setState({logined})
+      UserLogined(logined)
     } );
   }
 	login() {
     let response;
-    if(!this.state.logined && this.props.location.pathname !== '/login') {
+    if(!this.props.logined && this.props.location.pathname !== '/login') {
       response = <Redirect to="/login" />;
     }
-    else if (!this.state.logined && this.props.location.pathname === '/login') {
+    else if (!this.props.logined && this.props.location.pathname === '/login') {
       response = null;
     }
-    else if (this.state.logined && this.props.location.pathname === '/login') {
+    else if (this.props.logined && this.props.location.pathname === '/login') {
       response = <Redirect to="/" />;
     }
     else {
       response = null
     }
     return (response);
-	}
-	checkLogined(){
-		const {logined} = this.props;
-		return logined === true ? 'giris yapildi' : (logined === false ? 'giris yapilamadi' : 'bekleniyor')
 	}
 	render() {
 		const {t,logined} = this.props;

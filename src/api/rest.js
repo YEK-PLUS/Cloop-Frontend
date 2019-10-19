@@ -16,7 +16,7 @@ instance.interceptors.response.use(
 export default async (path, body) => {
 	const header = {
 		headers: {
-			Authorization: `Bearer ${getLocalStorage('UserToken')}`,
+			Authorization: getLocalStorage('UserToken'),
 		},
 	};
 	const r = await instance.post(path, body, header);

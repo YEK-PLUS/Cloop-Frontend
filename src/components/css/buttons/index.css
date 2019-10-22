@@ -1,0 +1,9 @@
+.dots-3{
+  @apply flex-full px-2;
+}
+.dots-3>div{
+  @apply w-2 h-2 rounded-full ml-1;
+}
+.dots-3>div:first{
+  @apply m-0;
+}

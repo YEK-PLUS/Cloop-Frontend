@@ -8,6 +8,7 @@ import {userActions} from '../state/actions';
 import {RestAPI} from '../api';
 import {setLocalStorage} from '../helper'
 import {TwoInputRow,RoundedButton} from '../components';
+import {TwoInputRow,TwoInputCol,RoundedButton} from '../components';
 const mapStateToProps = (state) => ({
   logined: state.user.logined,
 });
@@ -69,14 +70,41 @@ class LoginPage extends React.Component {
       }
     }
   }
+  getField(){
+    const {t} = this.props;
+    const props = {
+      1:{
+        type:'text',
+        name:'login',
+        onChange:this.onChange,
+        placeholder:t('login:usernamePlaceholder')
+      },
+      2:{
+        type:'password',
+        name:'password',
+        onChange:this.onChange,
+        placeholder:t('login:passwordPlaceholder')
+      }
+    }
+    return (
+      <div>
+        <div className={`hidden md:block`}>
+          <TwoInputCol {...props}/>
+        </div>
+        <div className={`block md:hidden`}>
+          <TwoInputCol {...props}/>
+        </div>
+      </div>
+    )
+  }
 	render() {
 		const {t} = this.props;
 		return (
-      <div className={`w-full h-full absolute flex-full`}>
-        <div className={`w-1/4 h-auto py-4 px-3 flex-full flex-col border-2 rounded border-red-500`}>
+      <div className={`w-full h-full absolute flex-full px-4 md:p-0`}>
+        <div className={`w-64 m-auto h-auto py-6 px-3 flex-full flex-col bg-white shadow`}>
           <div className={`text-center`}>{t('main:title')}</div>
           <div className={`text-center`}>{this.checkFail()}</div>
-          <TwoInputRow
+          <TwoInputCol
             {
               ...{
                 1:{
@@ -93,7 +121,8 @@ class LoginPage extends React.Component {
                 }
               }
             }
-            />
+          />
+
           <RoundedButton {
               ...{
                 onClick:this.onClick,

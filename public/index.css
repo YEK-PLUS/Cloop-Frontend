@@ -652,6 +652,84 @@ video {
   transition: .5s all ease;
 }
 
+.square-big{
+  width: 50vw;
+  height: 50vw;
+}
+
+.square{
+  width: 20vw;
+  height: 20vw;
+}
+
+.square-col-3{
+  width: 30vw;
+  height: 30vw;
+}
+
+.square-w-full{
+  height: 100vw;
+  width: 100vw;
+}
+
+.square-w-full-p-4{
+  height: 100vw;
+  width: 100vw;
+  padding: 5vw;
+}
+
+.container-with-menu{
+  width: 100%;
+  height:calc(100vh - 4rem)
+}
+
+.loading-fade{
+  transition: .5s all ease;
+  -webkit-animation: loading-animation .5s infinite;
+          animation: loading-animation .5s infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+@-webkit-keyframes loading-animation {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes loading-animation {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.dots-3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.dots-3>div{
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  margin-left: 0.25rem;
+}
+
+.dots-3>div:first{
+  margin: 0;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

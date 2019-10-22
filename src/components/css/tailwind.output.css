@@ -14,4 +14,61 @@
   transition: .5s all ease;
 }
 
+.square-big{
+  width: 50vw;
+  height: 50vw;
+}
+
+.square{
+  width: 20vw;
+  height: 20vw;
+}
+
+.square-col-3{
+  width: 30vw;
+  height: 30vw;
+}
+
+.square-w-full{
+  height: 100vw;
+  width: 100vw;
+}
+
+.square-w-full-p-4{
+  @apply square-w-full;
+  padding: 5vw;
+}
+
+.container-with-menu{
+  @apply w-full;
+  height:calc(100vh - 4rem)
+}
+
+.loading-fade{
+  @apply animation;
+  animation: loading-animation .5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes loading-animation {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.dots-3{
+  @apply flex-full px-2;
+}
+
+.dots-3>div{
+  @apply w-2 h-2 rounded-full ml-1;
+}
+
+.dots-3>div:first{
+  @apply m-0;
+}
+
 @tailwind utilities;

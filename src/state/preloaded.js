@@ -1,6 +1,7 @@
 const preloaded = {
 	user: {
 		logined: 'waiting',
+		user: {},
 	},
 };
 

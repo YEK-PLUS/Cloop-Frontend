@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getLocalStorage } from '../helper';
 
 const instance = axios.create({
-	baseURL: 'http://localhost:8080/',
+	baseURL: 'http://192.168.1.105:8080/',
 	timeout: 5000,
 
 });

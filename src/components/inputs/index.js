@@ -1,1 +1,2 @@
-export TwoInputRow from './twoinputrow';
+export TwoInputRow from './TwoInputRow';
+export TwoInputCol from './TwoInputCol';

@@ -1,0 +1,14 @@
+.loading-fade{
+  @apply animation;
+  animation: loading-animation .5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes loading-animation {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}

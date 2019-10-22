@@ -1,0 +1,24 @@
+.square-big{
+  width: 50vw;
+  height: 50vw;
+}
+.square{
+  width: 20vw;
+  height: 20vw;
+}
+.square-col-3{
+  width: 30vw;
+  height: 30vw;
+}
+.square-w-full{
+  height: 100vw;
+  width: 100vw;
+}
+.square-w-full-p-4{
+  @apply square-w-full;
+  padding: 5vw;
+}
+.container-with-menu{
+  @apply w-full;
+  height:calc(100vh - 4rem)
+}

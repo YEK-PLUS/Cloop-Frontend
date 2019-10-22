@@ -7,7 +7,6 @@ import _ from 'lodash';
 import {userActions} from '../state/actions';
 import {RestAPI} from '../api';
 import {setLocalStorage} from '../helper'
-import {TwoInputRow,RoundedButton} from '../components';
 import {TwoInputRow,TwoInputCol,RoundedButton} from '../components';
 const mapStateToProps = (state) => ({
   logined: state.user.logined,
@@ -43,6 +42,7 @@ class LoginPage extends React.Component {
           const {UserLogined} = this.props;
           UserLogined();
           this.setState({loginFail:false})
+          window.location.reload()
         }
         else{
           this.setState({loginFail:data.error})
@@ -56,7 +56,7 @@ class LoginPage extends React.Component {
   checkFail(){
     const {t} = this.props;
     if(!this.state.loginFail){
-      return <Redirect to="/" />
+      return null
     }
     else{
       if(this.state.loginFail === 'invalid password'){

@@ -42,17 +42,17 @@ class BirthdayPanel extends React.Component {
 		const { data:data3 } = useQuery(GetBirthDay('>'));
 		if(data1 && data2 && data3){
 			childs.push(
-				<div className={`w-full md:order-1 lg:w-1/3 lg:order-3`}>
+				<div className={`w-full md:order-1 md:w-full lg:order-2 lg:w-full`}>
 					<BirthDayCard users={data3.birthdays} bg={`green`} split={[`md`,`lg`]} title={`Dogum gunu bugun`}/>
 				</div>
 			)
 			childs.push(
-				<div className={`w-full md:order-2 md:w-1/2 lg:w-1/3`}>
+				<div className={`w-full md:order-2 md:w-1/2 lg:order-1 lg:w-full`}>
 					<BirthDayCard users={data1.birthdays} bg={`red`} title={`Dogum gunu gecenler`}/>
 				</div>
 			)
 			childs.push(
-				<div className={`w-full md:order-4 md:w-1/2 lg:w-1/3`}>
+				<div className={`w-full md:order-3 md:w-1/2 lg:order-3 lg:w-full`}>
 					<BirthDayCard users={data3.birthdays} title={`Dogum gunu yaklasanlar`}/>
 				</div>
 			)
@@ -65,8 +65,10 @@ class BirthdayPanel extends React.Component {
 		return (
       <div>
         <LoadNavBar/>
-				<div className={`w-full h-auto flex flex-col md:flex-row flex-wrap`}>
-					<LoadBirthDays/>
+				<div className={`container-with-menu overflow-y-auto`}>
+					<div className={`w-full h-auto flex flex-col md:flex-row flex-wrap lg:flex-no-wrap`}>
+						<LoadBirthDays/>
+					</div>
 				</div>
       </div>
 		);

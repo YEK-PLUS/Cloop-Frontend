@@ -41,9 +41,21 @@ class BirthdayPanel extends React.Component {
 		const { data:data2 } = useQuery(GetBirthDay('='));
 		const { data:data3 } = useQuery(GetBirthDay('>'));
 		if(data1 && data2 && data3){
-			childs.push(<BirthDayCard users={data1.birthdays} bg={`red`} title={`Dogum gunu gecenler`}/>)
-			childs.push(<BirthDayCard users={data2.birthdays} bg={`green`} title={`Dogum gunu bugun`}/>)
-			childs.push(<BirthDayCard users={data3.birthdays} title={`Dogum gunu yaklasanlar`}/>)
+			childs.push(
+				<div className={`w-full md:order-1 lg:w-1/3 lg:order-3`}>
+					<BirthDayCard users={data3.birthdays} bg={`green`} split={[`md`,`lg`]} title={`Dogum gunu bugun`}/>
+				</div>
+			)
+			childs.push(
+				<div className={`w-full md:order-2 md:w-1/2 lg:w-1/3`}>
+					<BirthDayCard users={data1.birthdays} bg={`red`} title={`Dogum gunu gecenler`}/>
+				</div>
+			)
+			childs.push(
+				<div className={`w-full md:order-4 md:w-1/2 lg:w-1/3`}>
+					<BirthDayCard users={data3.birthdays} title={`Dogum gunu yaklasanlar`}/>
+				</div>
+			)
 		}
 		return childs;
 	}
@@ -53,7 +65,7 @@ class BirthdayPanel extends React.Component {
 		return (
       <div>
         <LoadNavBar/>
-				<div className={`w-full h-auto flex flex-col`}>
+				<div className={`w-full h-auto flex flex-col md:flex-row flex-wrap`}>
 					<LoadBirthDays/>
 				</div>
       </div>

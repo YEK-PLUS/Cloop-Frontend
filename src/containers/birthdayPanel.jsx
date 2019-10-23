@@ -43,7 +43,7 @@ class BirthdayPanel extends React.Component {
 		if(data1 && data2 && data3){
 			childs.push(
 				<div className={`w-full md:order-1 md:w-full lg:order-2 lg:w-full`}>
-					<BirthDayCard users={data3.birthdays} bg={`green`} split={[`md`,`lg`]} title={`Dogum gunu bugun`}/>
+					<BirthDayCard users={data2.birthdays} bg={`green`} split={[`md`,`lg`]} title={`Dogum gunu bugun`}/>
 				</div>
 			)
 			childs.push(

@@ -1,12 +1,12 @@
 import { gql } from 'apollo-boost';
 
 function formatDate() {
-	const date = new Date();
-	const day = date.getDate();
-	const month = date.getMonth();
-	const year = date.getFullYear();
+  const date = new Date();
+  const day = date.getDate();
+  const month = date.getMonth();
+  const year = date.getFullYear();
 
-	return `${year}-${month}-${day}`;
+  return `${year}-${month}-${day}`;
 }
 const GetBirthDay = (type, date = formatDate()) => gql`
   {

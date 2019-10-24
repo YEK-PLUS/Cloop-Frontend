@@ -1,8 +1,8 @@
 const preloaded = {
-	user: {
-		logined: 'waiting',
-		user: {},
-	},
+  user: {
+    logined: 'waiting',
+    user: {},
+  },
 };
 
 export default preloaded;

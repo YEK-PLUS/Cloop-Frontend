@@ -1,4 +1,4 @@
 export const USER = {
-	LOGINED: 'LOGINED',
-	SAVE: 'SAVE',
+  LOGINED: 'LOGINED',
+  SAVE: 'SAVE',
 };

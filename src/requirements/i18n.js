@@ -4,32 +4,32 @@ import XHR from 'i18next-xhr-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 const options = {
-	fallbackLng: 'en',
-	load: 'languageOnly',
-	ns: ['main', 'login','birthday'],
-	defaultNS: 'main',
+  fallbackLng: 'en',
+  load: 'languageOnly',
+  ns: ['main', 'login', 'birthday'],
+  defaultNS: 'main',
 
-	saveMissing: true,
-	debug: false,
+  saveMissing: true,
+  debug: false,
 
-	interpolation: {
-		escapeValue: false,
-		formatSeparator: ',',
-		format: (value, format) => {
-			if (format === 'uppercase') return value.toUpperCase();
-			return value;
-		},
-	},
-	wait: process && !process.release,
+  interpolation: {
+    escapeValue: false,
+    formatSeparator: ',',
+    format: (value, format) => {
+      if (format === 'uppercase') return value.toUpperCase();
+      return value;
+    },
+  },
+  wait: process && !process.release,
 };
 if (process && !process.release) {
-	i18n
-		.use(XHR)
-		.use(initReactI18next)
-		.use(LanguageDetector);
+  i18n
+    .use(XHR)
+    .use(initReactI18next)
+    .use(LanguageDetector);
 }
 
 if (!i18n.isInitialized) {
-	i18n.init(options);
+  i18n.init(options);
 }
 export default i18n;

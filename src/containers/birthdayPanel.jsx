@@ -19,6 +19,7 @@ class BirthdayPanel extends React.Component {
 	constructor(props) {
 		super(props);
 		this.LoadNavBar = this.LoadNavBar.bind(this);
+		this.LoadBirthDays = this.LoadBirthDays.bind(this);
 	}
   LoadNavBar(){
     const {logined,user} = this.props;
@@ -36,6 +37,7 @@ class BirthdayPanel extends React.Component {
 
   }
 	LoadBirthDays(){
+		const {t} = this.props;
 		let childs = [];
 		const { data:data1 } = useQuery(GetBirthDay('<'));
 		const { data:data2 } = useQuery(GetBirthDay('='));
@@ -43,17 +45,17 @@ class BirthdayPanel extends React.Component {
 		if(data1 && data2 && data3){
 			childs.push(
 				<div className={`w-full md:order-1 md:w-full lg:order-2 lg:w-full`}>
-					<BirthDayCard users={data2.birthdays} bg={`green`} split={[`md`,`lg`]} title={`Dogum gunu bugun`}/>
+					<BirthDayCard users={data2.birthdays} bg={`green`} split={[`md`,`lg`]} title={t('birthday:today')}/>
 				</div>
 			)
 			childs.push(
 				<div className={`w-full md:order-2 md:w-1/2 lg:order-1 lg:w-full`}>
-					<BirthDayCard users={data1.birthdays} bg={`red`} title={`Dogum gunu gecenler`}/>
+					<BirthDayCard users={data1.birthdays} bg={`red`} title={t('birthday:past')}/>
 				</div>
 			)
 			childs.push(
 				<div className={`w-full md:order-3 md:w-1/2 lg:order-3 lg:w-full`}>
-					<BirthDayCard users={data3.birthdays} title={`Dogum gunu yaklasanlar`}/>
+					<BirthDayCard users={data3.birthdays} title={t('birthday:soon')}/>
 				</div>
 			)
 		}
@@ -75,4 +77,4 @@ class BirthdayPanel extends React.Component {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withTranslation('main')(BirthdayPanel));
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation(['main','birthday'])(BirthdayPanel));

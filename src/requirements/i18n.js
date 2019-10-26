@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import XHR from 'i18next-xhr-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
+import { RestAPI } from '../api';
 const options = {
   fallbackLng: 'en',
   load: 'languageOnly',
@@ -32,4 +33,15 @@ if (process && !process.release) {
 if (!i18n.isInitialized) {
   i18n.init(options);
 }
+const extendedTranslate = async() => {
+  const translations = await RestAPI('/translate')
+  translations.forEach((data)=>{
+    data.translates.forEach((translate)=>{
+      const t = {};
+      t[data.word] = translate.translated_word;
+      i18n.addResources(translate.lang, options.ns[0], t);
+    })
+  })
+}
+extendedTranslate()
 export default i18n;

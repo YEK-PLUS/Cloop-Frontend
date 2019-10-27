@@ -1,2 +1,2 @@
-exportApolloClientfrom './apollo';
-exportRestAPIfrom './rest';
+export ApolloClient from './apollo';
+export RestAPI from './rest';

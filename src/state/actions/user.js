@@ -1,6 +1,6 @@
-import {USER} from '../types';
+import { USER } from '../types';
 
-const {LOGINED, SAVE} = USER;
+const { LOGINED, SAVE } = USER;
 const UserLogined = (payload = true) => {
   const a = {
     type: LOGINED,

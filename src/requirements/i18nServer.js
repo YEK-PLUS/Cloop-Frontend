@@ -15,17 +15,17 @@ const setupOptions = (src) => ({
 });
 const i18nsetup = (src, server, callback) => {
   i18n
-      .use(Backend)
-      .use(i18nextMiddleware.LanguageDetector)
-      .init(
-          setupOptions(src),
-          () => {
-            server
-                .use(i18nextMiddleware.handle(i18n))
-                .use('/locales', express.static(`${src}/locales`));
-            callback(server);
-          },
-      );
+    .use(Backend)
+    .use(i18nextMiddleware.LanguageDetector)
+    .init(
+      setupOptions(src),
+      () => {
+        server
+          .use(i18nextMiddleware.handle(i18n))
+          .use('/locales', express.static(`${src}/locales`));
+        callback(server);
+      },
+    );
   return server;
 };
 export default i18nsetup;

@@ -1,13 +1,13 @@
-import {createStore, applyMiddleware} from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import Reducers from './reducers';
 
 const SetupStore = (PreloadedState) => {
   const store = createStore(
-      Reducers,
-      PreloadedState,
-      applyMiddleware(thunk),
+    Reducers,
+    PreloadedState,
+    applyMiddleware(thunk),
   );
 
   if (module.hot) {

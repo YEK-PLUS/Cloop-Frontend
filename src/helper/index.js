@@ -1,2 +1,2 @@
-export {getLocalStorage, setLocalStorage, delLocalStorage} from './localStorage';
-export {GetMe, GetBirthDay, GetTranslates} from './schemas';
+export { getLocalStorage, setLocalStorage, delLocalStorage } from './localStorage';
+export { GetMe, GetBirthDay,GetTranslates } from './schemas';

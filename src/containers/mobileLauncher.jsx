@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FaUserAlt,FaBirthdayCake } from 'react-icons/fa';
+import { FaUserAlt,FaBirthdayCake,FaNewspaper } from 'react-icons/fa';
 import { WiDayCloudy } from "react-icons/wi";
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -23,7 +23,8 @@ class MobileLauncher extends React.Component {
   Launcher(){
     const {user} = this.props;
 		const launcherItems = {
-			'birthday':FaBirthdayCake
+			'birthday':FaBirthdayCake,
+			'news':FaNewspaper
 		}
     let items = [];
     for (var i = 0; i < _.size(user.authority); i++) {

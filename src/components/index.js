@@ -1,6 +1,6 @@
-export { TwoInputRow, TwoInputCol } from './inputs';
-export { RoundedButton, Dots3 } from './buttons';
-export { DefaultNavbar } from './navbars';
+export {TwoInputRow, TwoInputCol} from './inputs';
+export {RoundedButton, Dots3} from './buttons';
+export {DefaultNavbar} from './navbars';
 export {
   ResponsiveImageHorizontal,
   ResponsiveImageVertical,

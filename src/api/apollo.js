@@ -1,5 +1,5 @@
 import ApolloClient from 'apollo-boost';
-import { getLocalStorage } from '../helper';
+import {getLocalStorage} from '../helper';
 import 'cross-fetch/polyfill';
 
 const client = new ApolloClient({

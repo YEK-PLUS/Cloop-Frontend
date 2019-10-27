@@ -1,2 +1,2 @@
-export RoundedButton from './RoundedButton';
-export Dots3 from './Dots3';
+exportRoundedButtonfrom './RoundedButton';
+exportDots3from './Dots3';

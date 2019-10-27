@@ -1,12 +1,12 @@
 {
-    "parser": "babel-eslint",
+    "parser" : "babel-eslint",
     "env": {
         "browser": true,
         "es6": true,
         "node": true
     },
     "extends": [
-        "google"
+        "airbnb"
     ],
     "globals": {
         "Atomics": "readonly",
